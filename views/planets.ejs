@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Star Wars Planets</title>
+</head>
+<body>
+<h1>Star Wars Planets</h1>
+<div class="planets-grid">
+    <% planets.forEach(planet => { %>
+        <div class="planet-card" onclick="window.location.href='<%= planet.id %>'">
+            <h2><%= planet.name %></h2>
+            <p>Climate: <%= planet.climate %></p>
+            <p>Population: <%= planet.population %></p>
+        </div>
+    <% }); %>
+</div>
+</body>
+</html>
