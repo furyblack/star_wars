@@ -13,9 +13,11 @@ router.get('/', async (req, res) =>{
 });
 
 router.get('/:id', async (req, res) =>{
-    const response = await axios.get(`https://sw-api.starnavi.io/planets/${req.params.id}/`);
+    const { id } = req.params;
+    const response = await axios.get(`https://sw-api.starnavi.io/people/?homeworld=${req.params.id}/`);
     const planet = response.data;
-    res.render('planet', { planet });
+    const characters = response.data;
+    res.render('planet', { planet, characters });
 })
 
 

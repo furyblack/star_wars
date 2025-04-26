@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= planet.name %> | Star Wars</title>
+    <title>Персонажи с планеты <%= planet.name %></title>
 </head>
 <body>
-<div class="container">
-    <a href="/">Все планеты</a>
-    <div class="planet-header">
-        <h1><%= planet.name %></h1>
-        <p>Climate: <%= planet.climate %></p>
-        <p>Population: <%= planet.population %></p>
-    </div>
-</div>
+<h1>Персонажи с планеты <%= planet.name %></h1>
+
+<% if (characters.length > 0) { %>
+    <ul>
+        <% characters.forEach(function(character, index) { %>
+            <li><%= index + 1 %>. <%= character.name %></li>
+        <% }); %>
+    </ul>
+<% } else { %>
+    <p>Нет персонажей, связанных с этой планетой.</p>
+<% } %>
+
+<a href="/">← Назад к списку планет</a>
 </body>
 </html>
