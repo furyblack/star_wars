@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><%= title %></title>
     <style>
         body {
@@ -13,28 +15,42 @@
         h1 {
             color: #2c3e50;
             font-size: 24px;
+            text-align: center;
         }
-        ul {
+        .planet-card {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .planet-card:hover {
+            background-color: #bdc3c7;
+        }
+        .people-list {
             list-style-type: none;
             padding: 0;
         }
-        li {
-            background-color: #ecf0f1;
-            margin: 8px 0;
-            padding: 10px;
-            border-radius: 4px;
+        .people-list li {
+            margin: 10px 0;
         }
-        li:nth-child(even) {
-            background-color: #bdc3c7;
+        .people-list li a {
+            text-decoration: none;
+            color: #2980b9;
+        }
+        .people-list li a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-<h1>People from <%= title %></h1> <!-- Здесь используем title -->
-<ul>
+<h1>People from <%= title %></h1>
+<ul class="people-list">
     <% people.forEach(person => { %>
-        <li><%= person.name %></li>
-    <% }) %>
+        <li><a href="/people/<%= person.name %>"><%= person.name %></a></li>
+    <% }); %>
 </ul>
+
 </body>
 </html>

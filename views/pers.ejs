@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+<h1><%= title %></h1>
+<% pers.forEach(person => { %>
+    <h2><%= person.name %></h2>
+    <img src="/images/<%= person.image %>" alt="<%= person.name %>" width="200" />
+    <p>Height: <%= person.height %></p>
+    <p>Mass: <%= person.mass %></p>
+    <p>Gender: <%= person.gender %></p>
+    <p>Birth Year: <%= person.birth_year %></p>
+<% }); %>
+</body>
+</html>
