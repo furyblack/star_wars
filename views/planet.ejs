@@ -45,7 +45,8 @@
     </style>
 </head>
 <body>
-<h1>People from <%= title %></h1>
+<h1>People from planet  <%= title %></h1>
+<h2><%= planet.name %></h2>
 <ul class="people-list">
     <% people.forEach(person => { %>
         <li><a href="/people/<%= person.name %>"><%= person.name %></a></li>
