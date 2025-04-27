@@ -1,21 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Персонажи с планеты <%= planet.name %></title>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 24px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #ecf0f1;
+            margin: 8px 0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        li:nth-child(even) {
+            background-color: #bdc3c7;
+        }
+    </style>
 </head>
 <body>
-<h1>Персонажи с планеты <%= planet.name %></h1>
-
-<% if (characters.length > 0) { %>
-    <ul>
-        <% characters.forEach(function(character, index) { %>
-            <li><%= index + 1 %>. <%= character.name %></li>
-        <% }); %>
-    </ul>
-<% } else { %>
-    <p>Нет персонажей, связанных с этой планетой.</p>
-<% } %>
-
-<a href="/">← Назад к списку планет</a>
+<h1>People from <%= title %></h1> <!-- Здесь используем title -->
+<ul>
+    <% people.forEach(person => { %>
+        <li><%= person.name %></li>
+    <% }) %>
+</ul>
 </body>
 </html>
