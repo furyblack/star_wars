@@ -3,9 +3,6 @@ const router = express.Router();
 const axios = require('axios');
 
 
-
-
-/* GET users listing. */
 router.get('/', async (req, res) =>{
     const response = await axios.get('https://sw-api.starnavi.io/planets/');
     const planets = response.data.results;
@@ -16,8 +13,6 @@ router.get('/:id', async (req, res, next) => {
     try {
         const response = await axios.get(`https://sw-api.starnavi.io/people/?homeworld=${req.params.id}`);
         const people = response.data.results;
-
-
         const planetResponse = await axios.get(`https://sw-api.starnavi.io/planets/${req.params.id}`);
         const planet = planetResponse.data;
         res.render('planet', { people,  title: planet.name, planet: planet  });
