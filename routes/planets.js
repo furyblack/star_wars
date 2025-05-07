@@ -16,7 +16,6 @@ router.get('/:id', async (req, res, next) => {
         const planetResponse = await axios.get(`https://sw-api.starnavi.io/planets/${req.params.id}`);
         const planet = planetResponse.data;
         res.render('planet', { people,  title: planet.name, planet: planet  });
-
     } catch (error) {
         next(error);
     }
